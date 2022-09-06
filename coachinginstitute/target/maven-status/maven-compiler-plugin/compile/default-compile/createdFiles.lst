@@ -1,0 +1,11 @@
+com\coaching\institute\service\FacultyService.class
+com\coaching\institute\repository\FacultyRepository.class
+com\coaching\institute\serviceimpl\FacultyServiceImpl.class
+com\coaching\institute\model\Student.class
+com\coaching\institute\serviceimpl\StudentServiceImpl.class
+com\coaching\institute\repository\StudentRepository.class
+com\coaching\institute\service\StudentService.class
+com\coaching\institute\model\Faculty.class
+com\coaching\institute\controller\FacultyController.class
+com\coaching\institute\CoachingInstituteApplication.class
+com\coaching\institute\controller\StudentController.class
