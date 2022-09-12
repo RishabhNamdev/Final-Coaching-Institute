@@ -15,9 +15,9 @@ import com.coaching.institute.responsedto.CustomExceptionResponse;
 @RestControllerAdvice
 public class MyContollerAdvice extends ResponseEntityExceptionHandler{
 
-	@ExceptionHandler(EmptyInputException.class)
-	public ResponseEntity<String> handleEmptyInput(EmptyInputException emptyInputException) {
-		return new ResponseEntity<String>("Input field is empty", HttpStatus.BAD_REQUEST);
+	@ExceptionHandler(Exception.class)
+	public ResponseEntity<String> handleEmptyInput(Exception e) {
+		return new ResponseEntity<String>(e.getLocalizedMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
 	}
 	
 	@ExceptionHandler(CustomException.class)
@@ -26,36 +26,9 @@ public class MyContollerAdvice extends ResponseEntityExceptionHandler{
 		response.setDate(e.getDate());
 		response.setMessage(e.getMessage());
 		response.setStatusCode(e.getStatusCode());
-		return new ResponseEntity<Object>(response, HttpStatus.BAD_REQUEST);
+		return new ResponseEntity<Object>(response, HttpStatus.INTERNAL_SERVER_ERROR);
 	}
 
-//	@ExceptionHandler(Exception.class)
-//	public ResponseEntity<String> handleEmptyInput(Exception exception) {
-//		throw new CustomException(603, "Something went wrong", LocalDate.now());
-		// return new ResponseEntity<String>("Input field is
-		// empty",HttpStatus.BAD_REQUEST);
-	
-//	@ExceptionHandler(CustomException.class)
-//	public ResponseEntity<String> handleEmptyInput1(CustomException e) {
-//		return new ResponseEntity<String>(e.getMessage(), HttpStatus.BAD_REQUEST);
-//	}
-//	
-	@ExceptionHandler
-	public ResponseEntity<String> handleEmptyInput1(CustomException e) {
-		return new ResponseEntity<String>("List is empty", HttpStatus.BAD_REQUEST);
-		
-	}
-	
-	@ExceptionHandler(CustomException.class)
-	public ResponseEntity<String> handleEmptyInput2(CustomException e) {
-		return new ResponseEntity<String>("is not updated student", HttpStatus.BAD_REQUEST);
-	
-	}
-	@ExceptionHandler(CustomException.class)
-    public ResponseEntity<String> handleEmptyInput3(CustomException e) {
-		return new ResponseEntity<String>("id not found", HttpStatus.INTERNAL_SERVER_ERROR);	
-	
-	}
 }
 
 

@@ -3,6 +3,7 @@ package com.coaching.institute.service;
 import java.util.List;
 import java.util.Optional;
 
+import com.coaching.institute.exception.CustomException;
 import com.coaching.institute.exception.EmptyInputException;
 import com.coaching.institute.exception.IdNotFoundException;
 import com.coaching.institute.exception.StudentNotFoundException;
@@ -13,15 +14,15 @@ import com.coaching.institute.model.Student;
 
 public interface StudentService {
 
-	Student saveStudent(Student student)throws EmptyInputException;
+	Student saveStudent(Student student)throws CustomException;
 
-	Optional<Student> getStudentByid(Integer id)throws IdNotFoundException;
+	Optional<Student> getStudentByid(Integer id)throws CustomException;
 
-	List<Student> getAllStudent()throws StudentNotFoundException;
+	List<Student> getAllStudent()throws CustomException;
 
-	String updateStudent(Integer id, Student student)throws  IdNotFoundException;
+	String updateStudent(Integer id, Student student)throws  CustomException;
 
-	String deleteStudent(Integer id)throws  IdNotFoundException;
+	String deleteStudent(Integer id)throws  CustomException;
 	
 	//List<Student> getStudentFacultyByid(Integer id);
 	
