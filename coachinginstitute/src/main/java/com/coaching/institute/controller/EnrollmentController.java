@@ -1,5 +1,6 @@
 package com.coaching.institute.controller;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,6 +36,11 @@ public class EnrollmentController {
 //	   return enrollmentService.getEnrollmentNoByStudentid(id);
 //   }
    
+   @GetMapping("/getAllEnrollment")
+   public List<Enrollment> getAllEnrollment()
+   {
+	   return enrollmentService.getAllEnrollment();
+   }
    
 
 }

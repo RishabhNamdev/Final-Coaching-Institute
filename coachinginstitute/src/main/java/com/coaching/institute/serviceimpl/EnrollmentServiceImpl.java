@@ -1,5 +1,6 @@
 package com.coaching.institute.serviceimpl;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,5 +46,9 @@ public class EnrollmentServiceImpl implements EnrollmentService {
 //		return optenroll;
 //	}
 
-	
+	public List<Enrollment> getAllEnrollment()
+	{
+		List<Enrollment> listofenroll =  enrollmentRepo.findAll();
+		return listofenroll;
+	}
 }

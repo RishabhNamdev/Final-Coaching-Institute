@@ -1,5 +1,6 @@
 package com.coaching.institute.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import com.coaching.institute.model.Enrollment;
@@ -12,5 +13,5 @@ public interface EnrollmentService {
 	
 	//Optional<Enrollment> getEnrollmentNoByStudentid(Integer id);
 	
-
+    List<Enrollment> getAllEnrollment();
 }
